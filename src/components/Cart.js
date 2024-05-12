@@ -1,13 +1,19 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Cart = () => {
     const cartData = useSelector((state) => state.cartData);
+    const [counter, setCounter] = useState(0);
     let amount = cartData.length && cartData.map(item=>item.price).reduce((prev, next)=>prev+next)
 console.warn(amount)
+
+useEffect(() => {
+    setCounter(cartData.length);
+},[cartData.length])
     return (<div>
         <Link to="/" >Go to Products Link</Link>
-        <h1>Cart Page</h1>
+        <h1>Cart Page {counter}</h1>
         <div className="cart-page-container">
             <table>
                 <tr>
