@@ -9,6 +9,7 @@ function* getProducts() {
     yield put({type: SET_PRODUCT_LIST, data})
 }
 
+
 function* searchProducts(data) {
     let result = yield fetch(`http://localhost:3000/products?q=${data.query}`);
     result = yield result.json();
