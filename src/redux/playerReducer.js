@@ -1,4 +1,4 @@
-import { SET_PLAYER_LIST } from "./constant"
+import { SET_PLAYER_LIST, SET_TEAM_LIST } from "./constant"
 
 
 
@@ -7,6 +7,17 @@ export const playerData = (data = [], action) => {
     switch (action.type) {
             case SET_PLAYER_LIST:
                 console.warn("PLAYER_LIST condition ", action)
+                return [...action.data]
+        default:
+            return data
+    }
+}
+
+export const teamData = (data = [], action) => {
+    console.warn("teamData - REDUCER called ")
+    switch (action.type) {
+            case SET_TEAM_LIST:
+                console.warn("TEAM_LIST condition ", action)
                 return [...action.data]
         default:
             return data
