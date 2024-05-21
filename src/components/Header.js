@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <div className="header">
             <Link to="/"><h1 className='logo'>Team Goa</h1></Link>
-            <Link to="/list"><h1 className='logo'>List</h1></Link>
+            <Link to="/list/all"><h1 className='logo'>List</h1></Link>
             <div className='search-box'>
                 <input type="text" onChange={(event) => dispatch(productSearch(event.target.value))} placeholder='Search Product' />
             </div>
