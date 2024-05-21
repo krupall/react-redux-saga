@@ -3,6 +3,19 @@
   .container{
     width: 1400px;
     margin: 0px auto;
+    position: relative;
+    .header-detail{
+      float: left;
+      width: 100%;
+      h2 {
+        float: left;
+
+      }
+      .detail{
+        border:1px solid #c3c3c3;
+      }
+     
+    }
   }
 }
 .team-card{
