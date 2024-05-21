@@ -5,6 +5,7 @@ import {useSelector} from 'react-redux'
 import { useEffect } from 'react';
 import { playerlist, teamlist } from '../redux/playerAction';
 import TeamSummary from './TeamSummery';
+import { Link } from 'react-router-dom'
 
 function Main() {
   const dispatch = useDispatch();
@@ -30,12 +31,12 @@ function Main() {
         <div className='detail'>
       <div className='total'><span className='totalNumber'>{playerData.length}</span><p>Registrations</p></div>
       <div className='category'>
-        GOLD PLAYER : {goldPlayers.length}
+       <Link to='/list/gold'>GOLD PLAYER</Link>  : {goldPlayers.length}
         SOLD: {goldPlayers.filter(e => e.sold === true).length}
         UNSOLD: {goldPlayers.filter(e => e.sold === false).length}
       </div>
       <div className='category'>
-        SILVER PLAYER : {silverPlayers.length}
+      <Link to='/list/silver'> SILVER PLAYER</Link> : {silverPlayers.length}
         SOLD: {silverPlayers.filter(e => e.sold === true).length}
         UNSOLD: {silverPlayers.filter(e => e.sold === false).length}
       </div>
