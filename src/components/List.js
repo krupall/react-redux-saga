@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 function List() {
     const dispatch = useDispatch();
     const category = useParams('category').category;
-    alert(category)
     const playerData = useSelector((state)=>state.playerData)
     const [listData, setlistData] = useState(playerData);
     
@@ -31,7 +30,10 @@ function List() {
     if(category === 'silver'){
       setlistData(listData.filter(e => e.category === 'Silver'))
     }
-    setlistData(playerData)
+    if(category === 'all'){
+
+      setlistData(playerData)
+    }
   },[category])
    
       return ( <div>
