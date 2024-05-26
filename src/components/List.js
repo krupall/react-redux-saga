@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react';
 import { playerlist } from '../redux/playerAction';
 import { Link } from 'react-router-dom';
+import './list.scss'
 
 
 function List() {
@@ -15,9 +16,9 @@ function List() {
     const [listData, setlistData] = useState(playerData);
     
   
-  const callClick= (event) => {
+  const callClick= (event, category) => {
     if(event.currentTarget.checked === true){
-      setlistData(listData.filter(e => e.category === 'Gold'))
+      setlistData(listData.filter(e => e.category === category))
     } else {
       setlistData(playerData)
     }
@@ -31,13 +32,14 @@ function List() {
       setlistData(listData.filter(e => e.category === 'Silver'))
     }
     if(category === 'all'){
-
       setlistData(playerData)
     }
   },[category])
    
       return ( <div>
-         {/* <input type='checkbox' checked={category === 'gold'} onClick={(e) =>callClick(e)}  /> {category === 'gold' ? 'Golden Players' :'Silver Players'} */}
+        <div className='categoryCheckboxGroup'>
+          <input type='checkbox' className='p-3' onClick={(e) =>callClick(e ,'Gold')}  /> Gold Players
+          <input type='checkbox'  className='m-2' onClick={(e) =>callClick(e, 'Silver')}  /> Silver Players</div>
         <div className='square'>{
        
        listData.map((element, index) => {

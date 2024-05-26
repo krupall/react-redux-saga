@@ -1,6 +1,9 @@
 JG.repeat(50, {
     id: JG.objectId(),
     category:JG.random('Silver','Gold'),
+    sold: false,
+    initialValue:1000,
+    team:'',
     email() {
       return (
         _.snakeCase(this.profile.name) +

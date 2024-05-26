@@ -1,4 +1,4 @@
-import { SET_PLAYER_LIST, SET_TEAM_LIST } from "./constant"
+import { SET_PLAYER_LIST, SET_TEAM_LIST,PLAYER_SOLD } from "./constant"
 
 
 
@@ -7,6 +7,9 @@ export const playerData = (data = [], action) => {
     switch (action.type) {
             case SET_PLAYER_LIST:
                 console.warn("PLAYER_LIST condition ", action)
+                return [...action.data]
+                case PLAYER_SOLD:
+                console.warn("PLAYER_SOLD condition ", action)
                 return [...action.data]
         default:
             return data
