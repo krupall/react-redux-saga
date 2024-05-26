@@ -22,7 +22,7 @@ function Player() {
       if (!player[0]?.sold) {
          setPlayerStatus('Sale')
       }
-   }, [userID])
+   }, [userID, playerStatus])
 
    function updateBid(cat) {
       if (cat === 'Gold') {
@@ -35,9 +35,21 @@ function Player() {
       setselectedTeam(teamName)
    }
 
+   function updatePlayerData() {
+      data.map((e) =>{
+         if(e.id == userID){
+            e.team = selectedTeam;
+            e.initialValue = initialValue;
+            e.sold = 'Sold';
+         }
+      })
+
+      return data;
+   }
+
    function sold() {
-      dispatch(salePlayer({player:player,team:selectedTeam }));
-      console.log(initialValue)
+      dispatch(salePlayer(updatePlayerData()));
+      setPlayerStatus('Sold');
    }
 
    function bidValueChange(e) {
@@ -47,6 +59,7 @@ function Player() {
 
    return (
       <div>
+         {/* player info */}
          <div>{player[0]?.profile?.name}</div>
          <div>{player[0]?.profile?.about}</div>
          <div>{player[0]?.profile?.dob}</div>
@@ -55,10 +68,15 @@ function Player() {
          <div><img src={player[0]?.picture} /></div>
          <div>{player[0]?.profile?.roles}</div>
          <div>{player[0]?.profile?.name}</div>
-         <input className="m-2" type='number' value={initialValue} onChange={(e) => bidValueChange(e)} />
-         <button className="btn btn-outline-danger" onClick={() => updateBid(player[0]?.category)}> + </button>
+          {/* Action */}
+         <input className="m-2" type='number' disabled={playerStatus === 'Sold'} value={initialValue} onChange={(e) => bidValueChange(e)} />
+         <button className="btn btn-outline-danger"  onClick={() => updateBid(player[0]?.category)}> + </button>
 
-         <p className="ml-1">{selectedTeam && (<div>Last Bid by: {selectedTeam}</div>)} <button className="btn btn-lg btn-success btn-block" disabled={playerStatus === 'sold' || selectedTeam === ''} onClick={() => sold(selectedTeam)}>{playerStatus} </button></p>
+          {/* Sold */}
+<p>{playerStatus === 'Sold' && <span>Sold to {player[0]?.team} in {player[0]?.initialValue}</span> }</p>
+         <p className="ml-1">{selectedTeam && playerStatus !== 'Sold' &&  (<div>Last Bid by: {selectedTeam}</div>)} <button className="btn btn-lg btn-success btn-block" disabled={playerStatus === 'sold' || selectedTeam === ''} onClick={() => sold(selectedTeam)}>{playerStatus} </button></p>
+
+          {/* Teams */}
 
          <div className="teamArea">
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">

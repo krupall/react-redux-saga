@@ -147,9 +147,17 @@
     text-decoration: none;
     font-weight: 600;
     &:hover{
-      background-color: #c3c3c3;
+      background-color: #8b8a8a;
       cursor: pointer;
     }
+    &.not-sold{
+      background: rgb(230, 230, 230);
+  }
+
+  &.sold{
+      background: rgb(169, 169, 169);
+      cursor: no-drop;
+  }
 }
 /* end cart page style */
 .search-box{

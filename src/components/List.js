@@ -58,7 +58,11 @@ function List() {
        
        listData.map((element, index) => {
             let url = `/player/`+element.id;
-            return  <Link to={url}>{index + 1}</Link>})}</div>  </div> );
+            let checkClassname = 'not-sold';
+            if(element.sold){
+              checkClassname ='sold';
+            }
+            return  <Link to={url} className={checkClassname}>{index + 1}</Link>})}</div>  </div> );
 }
 
 export default List;
