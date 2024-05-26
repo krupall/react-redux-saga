@@ -1,1 +1,11 @@
-{"teamList": ["Team 1","Team 2","Team 3","Team 4","Team 5","Team 6","Team 7","Team 8"] }
+{"teamList": {
+    "Team 1":{"test":"value"},
+    "Team 2":{"test":"value"},
+    "Team 3":{"test":"value"},
+    "Team 4":{"test":"value"},
+    "Team 5":{"test":"value"},
+    "Team 6":{"test":"value"},
+    "Team 7":{"test":"value"},
+    "Team 8":{"test":"value"}
+ }
+ |
