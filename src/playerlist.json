@@ -4,7 +4,7 @@
     "category": "Gold",
     "sold": true,
     "initialValue": 1000,
-    "team": "",
+    "team": "Team 3",
     "email": "holden_beard@gmail.com",
     "username": "holdeninvalid date",
     "profile": {
@@ -99,7 +99,7 @@
     "category": "Silver",
     "sold": true,
     "initialValue": 1000,
-    "team": "",
+    "team": "Team 1",
     "email": "cummings_stokes@gmail.com",
     "username": "cummingsinvalid date",
     "profile": {

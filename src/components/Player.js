@@ -68,14 +68,15 @@ function Player() {
          <div><img src={player[0]?.picture} /></div>
          <div>{player[0]?.profile?.roles}</div>
          <div>{player[0]?.profile?.name}</div>
+
           {/* Action */}
          <input className="m-2" type='number' disabled={playerStatus === 'Sold'} value={initialValue} onChange={(e) => bidValueChange(e)} />
-         <button className="btn btn-outline-danger"  onClick={() => updateBid(player[0]?.category)}> + </button>
-
+         <button className="btn btn-outline-danger" disabled={playerStatus === 'Sold'}  onClick={() => updateBid(player[0]?.category)}> + </button>
+         <p className="m-1">{selectedTeam && playerStatus !== 'Sold' &&  (<div>Last Bid by: {selectedTeam}</div>)} <button className="btn btn-lg btn-success btn-block m-3" disabled={playerStatus === 'sold' || selectedTeam === ''} onClick={() => sold(selectedTeam)}>{playerStatus} </button></p>
+      
           {/* Sold */}
-<p>{playerStatus === 'Sold' && <span>Sold to {player[0]?.team} in {player[0]?.initialValue}</span> }</p>
-         <p className="ml-1">{selectedTeam && playerStatus !== 'Sold' &&  (<div>Last Bid by: {selectedTeam}</div>)} <button className="btn btn-lg btn-success btn-block" disabled={playerStatus === 'sold' || selectedTeam === ''} onClick={() => sold(selectedTeam)}>{playerStatus} </button></p>
-
+<p className="m-2">{playerStatus === 'Sold' && <span>Sold to <b>{player[0]?.team}</b> in <b>{player[0]?.initialValue}</b> Points</span> }</p>
+        
           {/* Teams */}
 
          <div className="teamArea">
