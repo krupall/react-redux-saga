@@ -1,4 +1,4 @@
-import { PLAYER_LIST, TEAM_LIST } from "./constant"
+import { PLAYER_LIST, TEAM_LIST, PLAYER_SOLD } from "./constant"
 
 export const playerlist = () => {
   
@@ -11,5 +11,13 @@ export const teamlist = () => {
   
     return {
         type: TEAM_LIST,
+    }
+}
+
+export const salePlayer = (data) => {
+  
+    return {
+        type: PLAYER_SOLD,
+        data: data
     }
 }

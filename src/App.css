@@ -13,6 +13,8 @@
       }
       .detail{
         border:1px solid #c3c3c3;
+        float:left;
+        width: 100%;
       }
      
     }
