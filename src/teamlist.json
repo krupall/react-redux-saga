@@ -1,11 +1,60 @@
-{"teamList": [
-    "Team 1",
-    "Team 2",
-    "Team 3",
-    "Team 4",
-    "Team 5",
-    "Team 6",
-    "Team 7",
-    "Team 8"
-]
+{
+    "teamList": [
+        {
+            "teamName": "Team 1",
+            "totalBuget": 75000,
+            "playerList": ["664e3d7cb95c631c4423c71e"],
+            "nextPlayerBudget": 55000,
+            "desc": "winner of 2022"
+        },
+        {
+            "teamName": "Team 2",
+            "totalBuget": 75000,
+            "playerList": [],
+            "nextPlayerBudget": 55000,
+            "desc": "winner of 2023 and 2022"
+        },
+        {
+            "teamName": "Team 3",
+            "totalBuget": 75000,
+            "playerList": ["664e3d7ccc9fd4475b3f2c54"],
+            "nextPlayerBudget": 55000,
+            "desc": "winner of 2020"
+        },
+        {
+            "teamName": "Team 4",
+            "totalBuget": 75000,
+            "playerList": [],
+            "nextPlayerBudget": 55000,
+            "desc": "winner of 2021"
+        },
+        {
+            "teamName": "Team 5",
+            "totalBuget": 75000,
+            "playerList": [],
+            "nextPlayerBudget": 55000,
+            "desc": "winner of 2018"
+        },
+        {
+            "teamName": "Team 6",
+            "totalBuget": 75000,
+            "playerList": [],
+            "nextPlayerBudget": 55000,
+            "desc": "winner of 2016"
+        },
+        {
+            "teamName": "Team 7",
+            "totalBuget": 75000,
+            "playerList": [],
+            "nextPlayerBudget": 55000,
+            "desc": "winner of 2017"
+        },
+        {
+            "teamName": "Team 8",
+            "totalBuget": 75000,
+            "playerList": [],
+            "nextPlayerBudget": 55000,
+            "desc": "winner of 2015 and 2022 runners up"
+        }
+    ]
 }

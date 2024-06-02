@@ -43,7 +43,9 @@ function Main() {
       </div>
       </div>
       <div>Total Teams : {teamData?.length}</div>
-      <TeamSummary></TeamSummary>
+      {/* <TeamSummary></TeamSummary> */}
+
+        {/* Player List*/}
       <div className='product-container'>
         {
           playerData.map((item)=><div className='product-item'>
