@@ -11,6 +11,11 @@ function TeamSummary() {
   useEffect(()=>{
     dispatch(teamlist())
    },[])
+
+   const openModel = (teamName) => {
+    const getPlayerList = teamList.filter(e => e.teamName === teamName)[0];
+    console.log(getPlayerList);
+   }
   return (
     <div className="teamSummary">
       <h3>Team Purse Summary</h3>
@@ -20,9 +25,9 @@ function TeamSummary() {
         {teamList.length && teamList.map(e =>(
           <div className="card team-card m-2">
         <div className="card-body">
-        <h5 className="card-title">{e}</h5>
+        <h5 className="card-title">{e.teamName}</h5>
         <p className="card-text">Sample Text.</p>
-        <a href="#" className="btn btn-primary">
+        <a onClick={()=> openModel(e.teamName)} className="btn btn-primary">
           Players
         </a>
       </div></div>

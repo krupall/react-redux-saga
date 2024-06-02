@@ -66,7 +66,7 @@ function Player() {
          <div>{player[0]?.profile?.address}</div>
          <div>{player[0]?.category}</div>
          <div><img src={player[0]?.picture} /></div>
-         <div>{player[0]?.profile?.roles}</div>
+         <div>{player[0]?.roles}</div>
          <div>{player[0]?.profile?.name}</div>
 
           {/* Action */}
@@ -84,7 +84,7 @@ function Player() {
                <div class="btn-group mr-2" role="group" aria-label="First group">
                   {teamList.length && teamList.map(e => (
                      <>
-                        <button type="button" className="btn btn-outline-secondary ml-1" disabled={playerStatus === 'Sold'} onClick={() => teamClick(e, player)}>  {e}</button>
+                        <button type="button" className="btn btn-outline-secondary ml-1" disabled={playerStatus === 'Sold'} onClick={() => teamClick(e.teamName, player)}>  {e.teamName}</button>
                      </>
                   ))}  </div></div>
          </div>
