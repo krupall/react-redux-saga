@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 import { teamlist } from '../redux/playerAction';
 
+
 function TeamSummary() {
   const dispatch = useDispatch();
   const [modalTriggered, setModalTriggered] = useState(true);
@@ -37,7 +38,7 @@ function TeamSummary() {
       ))}
     </div>
     <div className="bootstrap-model">
-    <button
+      <button
         onClick={handleModalTrigger}
         aria-expanded={!modalTriggered ? true : false}
         className="btn btn-primary"
@@ -46,12 +47,12 @@ function TeamSummary() {
       </button>
 
       <div>
-      <div style={{ display: modalTriggered ? 'block' : 'none' }}>
+        <div className="modal" style={{ display: modalTriggered ? 'block' : 'none', background: '#00000047' }}>
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">Modal title</h5>
-                <button type="button" className="btn-close"></button>
+                <button type="button" className="btn-close" onClick={handleModalTrigger}></button>
               </div>
               <div className="modal-body">
                 <p>Modal body text goes here.</p>
@@ -61,12 +62,11 @@ function TeamSummary() {
                   type="button"
                   className="btn btn-secondary"
                   data-bs-dismiss="modal"
+                  onClick={handleModalTrigger}
                 >
                   Close
                 </button>
-                <button type="button" className="btn btn-primary">
-                  Save changes
-                </button>
+
               </div>
             </div>
           </div>
