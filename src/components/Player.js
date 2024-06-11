@@ -40,7 +40,7 @@ function Player() {
          if(e.id == userID){
             e.team = selectedTeam;
             e.initialValue = initialValue;
-            e.sold = 'Sold';
+            e.sold = true;
          }
       })
 
