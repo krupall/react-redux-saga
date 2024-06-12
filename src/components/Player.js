@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useDispatch } from 'react-redux'
-import { salePlayer } from '../redux/playerAction';
+import { salePlayer, updateTeamPlayer } from '../redux/playerAction';
 import { useEffect, useState } from "react";
 import TeamSummary from "./TeamSummery";
 import './player.scss';
@@ -11,6 +11,7 @@ function Player() {
    const userID = useParams('id').id;
    const dispatch = useDispatch();
    let data = useSelector((state) => state.playerData);
+   let teamData = useSelector((state) => state.teamData);
    const [team, setTeam] = useState('');
    const [selectedTeam, setselectedTeam] = useState('');
    const player = data.filter(e => e.id == userID);
@@ -47,8 +48,19 @@ function Player() {
       return data;
    }
 
+   function updateTeamData(){
+      console.log(teamData)
+      teamData.map((e) => {
+         if(e.teamName == selectedTeam){
+            e.totalBuget = e.totalBuget - initialValue;
+            e.playerList.push(userID);
+         }})
+      return teamData;
+   }
+
    function sold() {
       dispatch(salePlayer(updatePlayerData()));
+      dispatch(updateTeamPlayer(updateTeamData()));
       setPlayerStatus('Sold');
    }
 

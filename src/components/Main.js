@@ -22,7 +22,7 @@ function Main() {
   }, [])
 
   return (
-    <div className='container'>
+    <div className='container row'>
       <div>
         {/* <button onClick={() => dispatch(emptyCart())}>Empty Cart</button> */}
       </div>
@@ -42,7 +42,7 @@ function Main() {
           </div>
         </div>
       </div>
-      <div>Total Teams : {teamData?.length}</div>
+      <div className='row'>Total Teams : {teamData?.length}</div>
       {/* <TeamSummary></TeamSummary> */}
 
       {/* Player List*/}
