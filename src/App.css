@@ -15,15 +15,15 @@
       }
 
       .detail {
-        border: 1px solid #c3c3c3;
+       
         float: left;
         width: 100%;
 
         .total {
           float: left;
-          border-right: 1px solid #c3c3c3;
+          border: 1px solid grey;
           text-align: left;
-          padding-top: 12px;
+          padding-top: 10px;
           font-size: 24px;
           padding-left: 24px;
 
@@ -35,7 +35,7 @@
         }
 
         .category {
-          border-right: 1px solid grey;
+          border: 1px solid grey;
           height: 100px;
 
           .counter {
