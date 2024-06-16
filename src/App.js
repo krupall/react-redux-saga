@@ -21,7 +21,7 @@ function App() {
         <Route path='/bid' element={<Bid />} />
         <Route path='/list/:category' element={<List />} />
         <Route path='/TeamSummary' element={<TeamSummary players={true} />} />
-        <Route path='/player/:id' element={<Player />} />
+        <Route path='/player/:id/:number' element={<Player />} />
       </Routes>
     </div>
     </div>

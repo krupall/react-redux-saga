@@ -64,8 +64,8 @@ function List() {
     }
   },[category])
    
-      return ( <div>
-        <div className='categoryCheckboxGroup'>
+      return ( <div className='row list-view'>
+        <div className='categoryCheckboxGroup '>
           <input type='checkbox' className='p-3' checked={checkGoldcheckbox} onClick={(e) =>callClick(e ,'Gold')}  /> Gold Players
           <input type='checkbox'  className='m-2' checked={checkSilvercheckbox} onClick={(e) =>callClick(e, 'Silver')}  /> Silver Players
           &nbsp;<span>Sold: {soldPlayer}</span>
@@ -75,7 +75,8 @@ function List() {
         <div className='square'>{
        
        listData.map((element, index) => {
-            let url = `/player/`+element.id;
+            let chitNumber = index+1;
+            let url = `/player/`+element.id+'/'+chitNumber;
             let checkClassname = 'not-sold';
             if(element.sold){
               checkClassname ='sold';
