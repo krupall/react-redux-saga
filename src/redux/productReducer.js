@@ -1,4 +1,4 @@
-import { PRODUCT_LIST, SET_PRODUCT_LIST } from "./constant"
+import { SET_PRODUCT_LIST } from "./constant"
 
 
 

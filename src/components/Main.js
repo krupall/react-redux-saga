@@ -1,10 +1,7 @@
-import { addToCart, emptyCart, removeToCart } from '../redux/action';
 import { useDispatch } from 'react-redux'
-import { productList } from '../redux/productAction';
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react';
 import { playerlist, teamlist } from '../redux/playerAction';
-import TeamSummary from './TeamSummery';
 import { Link } from 'react-router-dom'
 
 function Main() {
@@ -19,7 +16,7 @@ function Main() {
   useEffect(() => {
     dispatch(playerlist())
     dispatch(teamlist())
-  }, [])
+  }, [dispatch])
 
   return (
     <div className='container row'>

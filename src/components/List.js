@@ -1,16 +1,13 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 
 import {useSelector} from 'react-redux'
-
 import { useParams } from "react-router-dom";
-import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react';
-import { playerlist } from '../redux/playerAction';
 import { Link } from 'react-router-dom';
 import './list.scss'
 
 
 function List() {
-    const dispatch = useDispatch();
     const category = useParams('category').category;
     const playerData = useSelector((state)=>state.playerData)
     const [checkGoldcheckbox, setCheckGoldcheckbox] = useState(false)

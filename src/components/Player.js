@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch } from 'react-redux'
 import { salePlayer, updateTeamPlayer } from '../redux/playerAction';
 import { useEffect, useState } from "react";
-import TeamSummary from "./TeamSummery";
 import './player.scss';
 
 function Player() {
@@ -13,9 +12,8 @@ function Player() {
    const dispatch = useDispatch();
    let data = useSelector((state) => state.playerData);
    let teamData = useSelector((state) => state.teamData);
-   const [team, setTeam] = useState('');
    const [selectedTeam, setselectedTeam] = useState('');
-   const player = data.filter(e => e.id == userID);
+   const player = data.filter(e => e.id === userID);
    const url = player[0]?.category === 'Gold' ? '/list/gold' : '/list/silver';
    const [playerStatus, setPlayerStatus] = useState('Sold');
    const [initialValue, setInitialValue] = useState(player[0]?.initialValue || 1000);
@@ -25,7 +23,7 @@ function Player() {
       if (!player[0]?.sold) {
          setPlayerStatus('Sale')
       }
-   }, [userID, playerStatus])
+   }, [userID, playerStatus, player])
 
    function updateBid(cat) {
       if (cat === 'Gold') {
@@ -39,12 +37,13 @@ function Player() {
    }
 
    function updatePlayerData() {
-      data.map((e) => {
-         if (e.id == userID) {
+      data.map(e => {
+         if (e.id === userID) {
             e.team = selectedTeam;
             e.initialValue = initialValue;
             e.sold = true;
          }
+         return true
       })
 
       return data;
