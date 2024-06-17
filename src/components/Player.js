@@ -50,11 +50,13 @@ function Player() {
    }
 
    function updateTeamData() {
-      console.log(teamData)
+    
+      // eslint-disable-next-line array-callback-return
       teamData.map((e) => {
-         if (e.teamName == selectedTeam) {
+         if (e.teamName === selectedTeam) {
             e.totalBuget = e.totalBuget - initialValue;
             e.playerList.push(userID);
+           
          }
       })
       return teamData;
