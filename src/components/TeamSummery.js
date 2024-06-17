@@ -16,7 +16,7 @@ function TeamSummary() {
   let playerList = useSelector((state) => state.playerData);
   useEffect(() => {
     dispatch(teamlist())
-  }, [playerList])
+  }, [dispatch, playerList])
 
   const openModel = (teamName) => {
     handleModalTrigger();
@@ -41,9 +41,9 @@ function TeamSummary() {
             <h5 className="card-title">{e.teamName}</h5>
             <p className="card-text">{e.desc}</p>
             <p className="card-text">Available Budget: {e.totalBuget}</p>
-            <a onClick={() => openModel(e.teamName)} className="btn btn-primary">
+            <span onClick={() => openModel(e.teamName)} className="btn btn-primary">
               Players
-            </a>
+            </span>
           </div></div>
       ))}
     </div>
