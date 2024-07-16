@@ -108,6 +108,21 @@
 
 /* product UI style */
 
+.player-list-width{
+  width: 110px;
+  float: left;
+  margin: 5px;
+}
+
+.player-list-width .picture{
+  border: 4px solid rgb(221 221 222);
+  width: 106px;
+}
+
+.player-list-width span, .player-list-width div{
+  text-align: center;float: left; width: 100%;
+}
+
 .teamSummaryButton {
 
   padding: 30px 10px;
