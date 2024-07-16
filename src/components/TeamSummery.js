@@ -27,7 +27,7 @@ function TeamSummary() {
   const getPlayerList = (list) => {
     const players = playerList?.filter(e => list?.includes(e.id))
     return ( players.length > 0? players.map(e => <div className='player-list-width'>
-      <img className="picture" alt='player Image' src={e.picture}/>
+      <img className="picture" alt='player' src={e.picture}/>
       <div>{e.profile.name}</div>
       <span>{e.initialValue}</span></div>
       ) : 'No Players Selected');
