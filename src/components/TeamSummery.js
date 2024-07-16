@@ -26,7 +26,11 @@ function TeamSummary() {
 
   const getPlayerList = (list) => {
     const players = playerList?.filter(e => list?.includes(e.id))
-    return ( players.length > 0? players.map(e => <p>{e.profile.name}</p>) : 'No Players Selected');
+    return ( players.length > 0? players.map(e => <div className='player-list-width'>
+      <img className="picture" src={e.picture}/>
+      <div>{e.profile.name}</div>
+      <span>{e.initialValue}</span></div>
+      ) : 'No Players Selected');
   }
 
   return (<>
@@ -52,14 +56,14 @@ function TeamSummary() {
       <div>
         <div className="modal" style={{ display: modalTriggered ? 'block' : 'none', background: '#00000047' }}>
           <div className="modal-dialog">
-            <div className="modal-content">
+            <div className="modal-content col-md-8">
               <div className="modal-header">
                 <h5 className="modal-title">{teamDetail?.teamName}</h5>
                 <button type="button" className="btn-close" onClick={handleModalTrigger}></button>
               </div>
-              <div className="modal-body">
+              <div className="modal-body ">
               
-                <p> PlayerList: { getPlayerList(teamDetail?.playerList)}</p>
+                <div className="col-md-12"> PlayerList: <p className="mt-2">{ getPlayerList(teamDetail?.playerList)}</p></div>
            
               </div>
               <div className="modal-footer">
