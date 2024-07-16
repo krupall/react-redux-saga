@@ -61,7 +61,7 @@ function TeamSummary() {
                 <h5 className="modal-title">{teamDetail?.teamName}</h5>
                 <button type="button" className="btn-close" onClick={handleModalTrigger}></button>
               </div>
-              <div className="modal-body ">
+              <div className="modal-body">
               
                 <div className="col-md-12"> PlayerList: <p className="mt-2">{ getPlayerList(teamDetail?.playerList)}</p></div>
            
