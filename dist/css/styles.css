@@ -104,6 +104,19 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+
+#portfolio{
+  padding-top: 0px;;
+}
+
+ul.bread-crumb a{
+    text-transform: none !important; font-size: 43px;     text-decoration: none; font-size: 16px;
+}
+
+ul.bread-crumb li{
+  padding: 20px; display: inline-block;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
